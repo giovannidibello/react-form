@@ -13,6 +13,7 @@ function App() {
     event.preventDefault();
     const listaAggiornata = [...listaArticoli, nuovoArticolo];
     setListaArticoli(listaAggiornata);
+    setNuovoArticolo("");
   }
 
   const rimuoviArticolo = i => {
