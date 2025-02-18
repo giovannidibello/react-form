@@ -15,6 +15,13 @@ function App() {
     setListaArticoli(listaAggiornata);
   }
 
+  const rimuoviArticolo = i => {
+    const listaAggiornata = listaArticoli.filter((nuovoArticolo, index) => {
+      return index !== i
+    });
+    setListaArticoli(listaAggiornata);
+  }
+
 
   return (
     <>
@@ -26,7 +33,10 @@ function App() {
 
 
       <ul className="lista">
-        {listaArticoli.map((articolo, i) => (<li key={i}>{articolo}</li>))}
+        {listaArticoli.map((articolo, i) => (<li key={i}>{articolo}
+          <button onClick={() => rimuoviArticolo(i)}> <i class="fa-solid fa-trash-can"></i>
+          </button>
+        </li>))}
       </ul >
     </>
   )
